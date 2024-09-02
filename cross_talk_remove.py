@@ -243,7 +243,7 @@ def testSolutions():
     # print('Fixed point: Mean abs relative error ', abs((cm2-cm)/cm).mean())
 ###
 
-def getConductance(rawMap, Rserie = 2400.0, nbits = 12, box = None):
+def getConductance(rawMap, Rserie = 10000.0, nbits = 12, box = None):
     """
      It obtains the conductance of a set of measurements assuming it is a voltage divider configuration. Rserie connects to Vcc. The unkown resistance is connected to ground.
      Inputs:
@@ -259,8 +259,8 @@ def getConductance(rawMap, Rserie = 2400.0, nbits = 12, box = None):
     lsb = 1.0/(2**nbits-1)
     val = rawMap*lsb
 
-    val[val == 1] = 0.99999999
-    val[val == 0] = 0.00000001
+    val[val == 1] = 1
+    val[val == 0] = 0
     res = R1*(1.0/val-1)
     if (box == 'black'):
         # Rmux is not zero and Rin(ADC) is not infinity. So take this into account
