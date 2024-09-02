@@ -1,4 +1,6 @@
 # Temperature-sensor
+# Pycharm Student register
+[Pycharm](https://www.jetbrains.com/shop/eform/students)
 ## Getting Started
 ### 1. Clone the Repository from Git
 Use PyCharm to clone the project.
